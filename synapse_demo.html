@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synapse Strategy - Hindsight Agent</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; margin: 0; padding: 20px; color: #333; }
+        .header { text-align: center; padding: 20px 0; background-color: #0052cc; color: white; border-radius: 8px; margin-bottom: 20px; }
+        .container { display: flex; gap: 20px; max-width: 1000px; margin: 0 auto; }
+        .panel { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); flex: 1; }
+        h2 { font-size: 18px; color: #0052cc; margin-top: 0; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .data-point { margin-bottom: 15px; }
+        .data-point span { font-weight: bold; color: #555; }
+        .tag { background: #fee2e2; color: #991b1b; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; }
+        .btn { display: block; width: 100%; background: #0052cc; color: white; border: none; padding: 12px; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
+        .btn:hover { background: #003d99; }
+        #loading { display: none; text-align: center; font-style: italic; color: #666; margin-top: 20px; }
+        #output { display: none; margin-top: 20px; padding: 15px; background: #e0f2fe; border-left: 4px solid #0284c7; border-radius: 4px; font-size: 14px; line-height: 1.6; }
+    </style>
+</head>
+<body>
+
+    <div style="max-width: 1000px; margin: 0 auto;">
+        <div class="header">
+            <h1 style="margin: 0; font-size: 24px;">Synapse Strategy | Outbound Prospecting Agent</h1>
+            <p style="margin: 5px 0 0 0; font-size: 14px; opacity: 0.9;">Powered by Hindsight Memory</p>
+        </div>
+
+        <div class="container">
+            <!-- Left Side: Candidate Data -->
+            <div class="panel">
+                <h2>Candidate Profile</h2>
+                <div class="data-point"><span>Name:</span> Sarah Jenkins</div>
+                <div class="data-point"><span>Role:</span> Senior Full-Stack Engineer</div>
+                <div class="data-point"><span>Company:</span> TechFlow Solutions</div>
+                
+                <h2 style="margin-top: 30px;">Hindsight Memory Database</h2>
+                <div class="data-point">
+                    <span>Past Interaction (March 2026):</span><br>
+                    "Thank you for the offer, but I am currently only looking for 100% remote opportunities. I cannot relocate at this time."
+                </div>
+                <div class="data-point"><span>System Tag:</span> <span class="tag">Requires Remote Work</span></div>
+
+                <button class="btn" onclick="generateEmail()">Generate AI Outreach</button>
+            </div>
+
+            <!-- Right Side: Agent Output -->
+            <div class="panel">
+                <h2>Agent Output</h2>
+                <p style="color: #666; font-size: 14px;">Awaiting system prompt...</p>
+                
+                <div id="loading">Scanning Hindsight Memory... Adapting Strategy...</div>
+                
+                <div id="output">
+                    <strong>Subject:</strong> Sarah, a fully remote Senior Engineering role for you
+                    <br><br>
+                    Hi Sarah,
+                    <br><br>
+                    I hope you're doing well. Last time we spoke in March, you mentioned that you were strictly looking for fully remote opportunities and could not relocate. 
+                    <br><br>
+                    Our system kept that in mind, and I'm reaching out today because we just opened a brand-new <strong>100% remote</strong> Senior Full-Stack Engineer position. We remembered your priority, and I wanted to make sure you were the first to know. 
+                    <br><br>
+                    Are you open to a quick chat this week to hear more?
+                    <br><br>
+                    Best,<br>
+                    Synapse AI Agent
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function generateEmail() {
+            document.getElementById('output').style.display = 'none';
+            document.getElementById('loading').style.display = 'block';
+            
+            setTimeout(() => {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('output').style.display = 'block';
+            }, 1500); // Fakes a 1.5 second loading time so it looks real
+        }
+    </script>
+
+</body>
+</html>
